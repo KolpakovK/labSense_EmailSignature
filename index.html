@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Signature editor</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Flow+Circular&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class=" text-bg-light">
+
+	<div class="container py-5">
+		<div class="row mb-3">
+			<div class="col-md-12">
+				<h1 class="display-4">
+					E-Signature builder
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<p class="text-secondary my-0">
+					This tool will allow you to create a personal email signature in a few clicks.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="container py-5">
+		<div class="row">
+			
+			<div class="col-md-4">
+
+				<div class="row mb-3">
+					<div class="col-12">
+						<h4 class="fw-normal">
+							Enter signature details
+						</h4>
+					</div>
+				</div>
+
+				<div class="row mb-4">
+
+					<div class="accordion" id="accordion">
+
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									Personal data
+								</button>
+							</h2>
+							<div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordion">
+								<div class="accordion-body">
+
+									<div class="mb-3">
+										<label for="nameInput" class="form-label">Full name</label>
+										<input type="text" class="form-control text-input" id="nameInput" data-output="nameOut">
+									</div>
+
+									<div class="mb-3">
+										<label for="positionInput" class="form-label">Job title</label>
+										<input type="text" class="form-control text-input" id="positionInput" data-output="positionOut">
+									</div>
+
+									<div class="mb-3">
+										<label for="phoneInput" class="form-label">Phone number</label>
+										<input type="text" class="form-control text-input" id="phoneInput" data-output="phoneOut">
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+									Company data
+								</button>
+							</h2>
+							<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion">
+								<div class="accordion-body">
+
+									<div class="mb-3">
+										<label for="companyInput" class="form-label">Company name</label>
+										<input type="text" class="form-control text-input" id="companyInput" data-output="companyOut">
+									</div>
+
+									<div class="mb-3">
+										<label for="webInput" class="form-label">Website</label>
+										<input type="text" class="form-control text-input" id="webInput" data-output="webOut">
+									</div>
+
+									<div class="mb-3">
+										<label for="addressInput" class="form-label">Address</label>
+										<input type="text" class="form-control text-input" id="addressInput" data-output="addressOut">
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+									Graphics
+								</button>
+							</h2>
+							<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordion">
+								<div class="accordion-body">
+
+									<p class="fw-medium mb-2" data-bs-toggle="tooltip" data-bs-html="true" data-bs-placement="right"
+									title="1. Upload your image to your server or to a file hosting service (e.g. Google Drive) or an image hosting service. 
+									<br>
+									2. Paste a direct link to your image (not a shareable link) into the image URL field.">
+									How to use graphics? <span><i class="bi bi-info-square-fill"></i></span></p>
+
+									<hr>
+
+									<div class="mb-3">
+										<label for="photoInput" class="form-label">Photo URL</label>
+										<input type="text" class="form-control url-input" id="photoInput" data-output="photoOut">
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="row mb-5">
+					<div class="col-12">
+						<button class="btn btn-primary" id="copyButton" data-clipboard-target="#signatureHidden">Copy signature <span><i class="bi bi-clipboard-check-fill"></i></span></button>
+					</div>
+				</div>
+
+				<div id="signatureHidden"></div>
+
+			</div>
+
+			<div class="col-md-8 align-self-center bg-secondary rounded py-5">
+				<div class="row justify-content-center">
+					<div class="col-md-6 bg-white p-4 rounded border ">
+						<h4 class="text-primary text-flow mb-4">Lorem ipsum dolor sit amet. </h4>
+						<p class="text-secondary text-flow mb-3">
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi praesentium repudiandae neque voluptatibus repellendus distinctio aliquam corrupti minus eveniet reprehenderit odit nostrum, illum
+						</p>
+						<hr>
+						<div id="signature">
+							<!--UNCOMMENT <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+							<HTML><HEAD><TITLE>Email Signature</TITLE>
+							<META content="text/html; charset=utf-8" http-equiv=Content-Type></HEAD>
+							<BODY style="font-size: 10pt; font-family: Arial, sans-serif;">UNCOMMENT-->
+
+								<table cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif; color: #9c9c9c; width:350px; background: transparent !important;">
+									<tbody>
+										<tr>
+
+
+											<td width="130" valign="top">
+												<table cellspacing="0" cellpadding="0" width="130" style="background: transparent !important;">
+													<tbody>
+														<tr>
+															<td style="width: 90px; height: 90px; text-align: center; padding-bottom: 15px;">
+																<img id="photoOut" border="0" alt="Photo" width="90" style="max-width:90px; height:auto; border:0;" src="https://www.mail-signatures.com/signature-generator/img/templates/csr/photo.png">
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+
+
+											<td style="width: 15px;"></td>
+
+
+											<td style="width: 205px;" valign="top">
+												<table cellspacing="0" cellpadding="0" style="width: 205px; background: transparent !important;">
+													<tbody>
+														<tr>
+															<td style="padding-bottom: 6px;">
+																<span style="FONT-SIZE: 14pt; COLOR: #1A1A1A; font-family: Arial, sans-serif; line-height: 19pt;">
+																	<strong id="nameOut">John Doe</strong>
+																</span>
+															</td>
+														</tr>
+														<tr>
+															<td style="padding-bottom: 6px;">
+																<span style="FONT-SIZE: 10pt; COLOR: #1A1A1A; font-family: Arial, sans-serif; line-height: 10pt; padding: 6px 12px; border-radius: 20px; background-color: #F9EEC6;" id="positionOut">
+																	Sales & Marketing Director
+																</span>
+															</td>
+														</tr>
+														<tr>
+															<td style="padding-bottom: 8px; border-bottom: 1px solid #DFDFDF;">
+																<span style="FONT-SIZE: 9pt; COLOR: #1A1A1A; font-family: Arial, sans-serif; line-height: 9pt;" id="companyOut">
+																	Company Name
+																</span>
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<span style="FONT-SIZE: 9pt; COLOR: #474747;font-weight: lighter; font-family: Arial, sans-serif; line-height: 8pt;" id="phoneOut">
+																	Phone number
+																</span>  <br>
+																<span style="FONT-SIZE: 9pt; COLOR: #474747;font-weight: lighter;  font-family: Arial, sans-serif; line-height: 8pt;" >
+																	<a target="_blank" rel="noopener" href="" style="COLOR: #474747; text-decoration: none;" id="webOut">Website</a>
+																	
+																</span>  <br>
+																<span style="FONT-SIZE: 9pt; COLOR: #474747;font-weight: lighter;  font-family: Arial, sans-serif; line-height: 8pt;" id="addressOut">
+																	Address
+																</span>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+
+
+										</tr>
+									</tbody>
+								</table>
+
+							<!--UNCOMMENT 
+							</BODY>
+						</HTML>UNCOMMENT-->
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
